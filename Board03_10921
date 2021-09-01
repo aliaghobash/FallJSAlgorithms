@@ -1,0 +1,34 @@
+
+// You can use the console window at the bottom
+
+  //R1_Front = ["|"," ","|"," ","|"]
+  R1_Front = ["|"," ","|"," ","|"," ","|"]
+  R1_Back = []
+   F= [1,2,3,4]
+
+  
+  for(i=0;i<R1_Front.length;i++){
+  if(R1_Front[i] == " "){  
+  console.log(i)
+  R1_Back.push(i)
+  }     
+  }
+  console.log(R1_Back)
+  
+ User = prompt("Pick a column:")
+ for(i=0;i<R1_Back.length;i++){
+ if(User == 1){
+ R1_Front[1]="x" 
+ } else{
+ if(User == R1_Back[i]){ 
+  
+  
+   pos = F[i]; // change with the number of divisbles. Works only for 3 now
+   //pos = User-divisble;
+   R1_Front[i+pos]="x"
+    }else{console.log(false)}
+ }
+ }
+  
+    joined = R1_Front.join('')
+    console.log(R1_Front,joined)
