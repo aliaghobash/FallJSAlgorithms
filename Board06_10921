@@ -1,0 +1,47 @@
+<script>
+ R1= ["|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|"]
+ B=[] //Backend 
+      //this is the index positions on R1 for blank spaces
+ F=[] //Frontend
+      //this is the index positions of backend elements
+ cols=[] //columns the player can see, starting from one. 
+ 
+  //I am doing a search here for empty spaces.
+ //Each time there is an empty space the loop will push the index location into the B array
+  for(i=0;i<R1.length;i++){
+      if(R1[i] == " "){  
+         B.push(i)
+       }     
+  }
+ // console.log(B)
+ //This loop counts the indexes of B and pushes it into F
+  for(i=0;i<B.length;i++){  
+  F.push(i)
+  }
+   console.log(F)
+   
+   //Subtracting each element of B and F will give you the 
+   //columns available for the player to choose from.
+   //Pushing these values into the cols array
+   for(i=0;i<B.length;i++){    
+     difference= B[i] - F[i] 
+     cols.push(difference); 
+   }
+   console.log(cols)
+  //ask the user to pick a column
+   User = prompt("pick column:")
+  //if the user picks a number found in the cols array,
+   //which are the available columns
+   //take the position of the user input from cols and 
+   //assign it to column in R1 array. This will replace what was   there before which was a " ". 
+   for(i=0;i<cols.length;i++){     
+   if(User == cols[i]){
+     pos = cols[i] 
+     R1[i+pos] = "x";
+   }
+   }
+
+  //join the board 
+  joined = R1.join('')
+  console.log(joined)
+</script>
