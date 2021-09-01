@@ -1,0 +1,41 @@
+<script>
+ R1= ["|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|"]
+ B=[] //Backend
+ F=[] //Frontend
+ cols=[]
+ 
+  
+  for(i=0;i<R1.length;i++){
+      if(R1[i] == " "){  
+         B.push(i)
+       }     
+  }
+  console.log(B)
+  
+  for(i=0;i<B.length;i++){  
+  F.push(i)
+  }
+   console.log(F)
+   
+   //difference 
+   for(i=0;i<B.length;i++){    
+     difference= B[i] - F[i] 
+     cols.push(difference);
+   }
+   console.log(cols)
+  
+   User = prompt("pick column:")
+   
+   for(i=0;i<cols.length;i++){
+   if(User == 1){
+      R1[1]="x" 
+    }else{      
+   if(User == cols[i]){
+     pos = F[i]+1
+     R1[i+pos] = "x";
+   }
+   }
+   }
+  
+  joined = R1.join('')
+  console.log(joined)
