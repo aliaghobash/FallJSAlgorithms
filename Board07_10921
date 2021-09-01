@@ -1,0 +1,52 @@
+  
+  //make this functional
+ R1= ["|"," ","|"," ","|"," ","|"," ","|"," ","|"," ","|"]
+ B=[]    
+ F=[] 
+ cols=[]
+ 
+ 
+ function blankSpaceFinder(array,back){
+  for(i=0;i<array.length;i++){
+      if(array[i] == " "){  
+         back.push(i)
+       }     
+   }
+   return back
+ }
+   console.log(blankSpaceFinder(R1,B))
+   
+   
+ function blankSpaceIndex(array,front){
+    for(i=0;i<array.length;i++){  
+         front.push(i)
+    }
+ return front
+ }
+   console.log(blankSpaceIndex(B,F))
+  
+  function visibleColumns(array,back,front){
+  
+   for(i=0;i<back.length;i++){    
+     difference= back[i] - front[i] 
+     array.push(difference); 
+   }   
+      return array
+  }
+   console.log(visibleColumns(cols,B,F));
+  
+ //user prompt 
+   User = prompt("pick column:")
+ 
+   
+   for(i=0;i<cols.length;i++){     
+   if(User == cols[i]){
+     pos = cols[i] 
+     R1[i+pos] = "x";
+   }
+   }
+  
+  
+  
+  joined = R1.join('')
+  console.log(joined)
