@@ -1,0 +1,13 @@
+ </script> 
+ 
+ User = prompt("Pick a number beween 1 and 4:")
+ B= [1,3,5,7]
+ F= [1,2,3,4] 
+     
+  for(i=0;i<B.length;i++){  
+    if(User == F[i]){
+    console.log(B[i] - F[i]) 
+    }
+  }
+  
+  </script>
